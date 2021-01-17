@@ -1,7 +1,7 @@
 {
-  "name": "slicks-slices-frontend",
+  "name": "nates-taco-shack-frontend",
   "private": true,
-  "description": "Slick Serves the Sweetest Slices",
+  "description": "Frontend Application to Nates Taco Shop",
   "version": "0.1.0",
   "license": "MIT",
   "scripts": {
@@ -13,14 +13,6 @@
     "clean": "gatsby clean",
     "netlify": "netlify dev",
     "prebuild": "netlify-lambda install"
-  },
-  "eslintConfig": {
-    "extends": [
-      "wesbos"
-    ],
-    "rules": {
-      "react/prop-types": 0
-    }
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.11.1",

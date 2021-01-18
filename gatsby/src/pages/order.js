@@ -1,11 +1,9 @@
 import React from 'react';
-import Nav from '../components/Nav';
 
-export default function OrderPage() {
+export default function OrdersPage() {
     return (
-        <div>
-            <Nav />
-            <p>OrderPage</p>
-        </div>
+        <>
+            <p>OrdersPage</p>
+        </>
     )
 };

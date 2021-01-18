@@ -1,11 +1,9 @@
 import React from 'react';
-import Nav from '../components/Nav';
 
-export default function TacosPage() {
+export default function TacoPage() {
     return (
-        <div>
-            <Nav />
-            <p>TacosPage</p>
-        </div>
+        <>
+            <p>TacoPage</p>
+        </>
     )
 };

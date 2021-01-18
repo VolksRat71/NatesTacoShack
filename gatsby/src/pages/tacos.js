@@ -1,11 +1,11 @@
 import React from 'react';
 import Nav from '../components/Nav';
 
-export default function OrderPage() {
+export default function TacosPage() {
     return (
         <div>
             <Nav />
-            <p>OrderPage</p>
+            <p>TacosPage</p>
         </div>
     )
 };

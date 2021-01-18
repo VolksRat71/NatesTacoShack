@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import bg from '../assets/images/bg.png';
 import stripes from '../assets/images/stripes.svg';
+import bg from '../assets/images/bg.png';
 
 const GlobalStyles = createGlobalStyle`
   :root {
@@ -12,7 +12,7 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     background-image: url(${bg});
-    background-size: 450px;
+    background-size: 50%;
     background-attachment: fixed;
     font-size: 10px;
   }

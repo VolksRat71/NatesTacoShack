@@ -10,7 +10,7 @@ export default {
             name: 'name',
             title: 'Taco Name',
             type: 'string',
-            description: 'Name of taco'
+            description: 'What is the name of taco?'
         },
         {
             name: 'slug',
@@ -37,5 +37,11 @@ export default {
             validation: Rule => Rule.min(200)
             // TODO: Add custom input component
         },
+        {
+            name: 'ingredients',
+            title: 'Ingredients',
+            type: 'array',
+            of: [{ type: 'reference', to: [{ type: 'ingredient' }] }]
+        }
     ]
 }

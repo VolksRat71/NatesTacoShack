@@ -54,8 +54,8 @@ export default {
             ingredient2: 'ingredients.2.name',
             ingredient3: 'ingredients.3.name',
         },
-        prepare: ({ title, media, ...ingredients }) => {
-            const ingredient = Object.values(ingredients).filter(Boolean).join(', ')
+        prepare: ({ veg, title, media, ...ingredients }) => {
+            const ingredient = Object.values(ingredients).filter(Boolean).join(', ');
             return {
                 title,
                 media,

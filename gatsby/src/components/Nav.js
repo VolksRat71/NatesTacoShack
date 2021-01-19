@@ -55,7 +55,7 @@ export default function Nav() {
         <NavStyles>
             <ul>
                 <li>
-                    <Link to="/">Hot Now</Link>
+                    <Link to="/">Specials &amp; Such</Link>
                 </li>
                 <li>
                     <Link to="/tacos/">Taco Menu</Link>
@@ -64,10 +64,10 @@ export default function Nav() {
                     <Link to="/"><Logo /></Link>
                 </li>
                 <li>
-                    <Link to="/tacomasters">Taco Masters</Link>
+                    <Link to="/chefs">Meet the Chefs</Link>
                 </li>
                 <li>
-                    <Link to="/order">Order Ahead!</Link>
+                    <Link to="/order">Delivery &amp; Curbside</Link>
                 </li>
             </ul>
         </NavStyles>

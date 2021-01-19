@@ -17,6 +17,7 @@ export default {
             name: 'vegetarian',
             title: 'Vegetarian',
             type: 'boolean',
+            description: 'Is this item allowed in a vegetarian diet?',
             options: {
                 layout: 'checkbox',
             },

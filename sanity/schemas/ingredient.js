@@ -14,10 +14,10 @@ export default {
             description: 'What is the name of the topping?'
         },
         {
-            name: 'vegetarian',
-            title: 'Vegetarian',
+            name: 'vegan',
+            title: 'Vegan',
             type: 'boolean',
-            description: 'Is this item allowed in a vegetarian diet?',
+            description: 'Is this item allowed in a vegan diet?',
             options: {
                 layout: 'checkbox',
             },
@@ -34,10 +34,10 @@ export default {
     preview: {
         select: {
             name: 'name',
-            vegetarian: 'vegetarian',
+            vegan: 'vegan',
         },
-        prepare: ({ name, vegetarian }) => ({
-            title: `${name} ${vegetarian ? '🌱' : ''}`,
+        prepare: ({ name, vegan }) => ({
+            title: `${name} ${vegan ? '🌱' : ''}`,
         }),
     },
 }

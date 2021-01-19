@@ -1,5 +1,6 @@
 import { GiTacos as icon } from 'react-icons/gi';
 import ingredient from './ingredient';
+import PriceInput from '../components/PriceInput'
 
 export default {
     name: 'taco',
@@ -34,9 +35,18 @@ export default {
             name: 'price',
             title: 'Price',
             type: 'number',
-            description: 'Price of the Taco in cents',
-            validation: Rule => Rule.min(200)
-            // TODO: Add custom input component
+            description: 'Price of the Taco in cents ($1.95 minimum)',
+            validation: Rule => Rule.min(195),
+            inputComponent: PriceInput
+        },
+        {
+            name: 'vegan',
+            title: 'Vegan',
+            type: 'boolean',
+            description: 'Is this taco allowed in a vegan diet?',
+            options: {
+                layout: 'checkbox',
+            },
         },
         {
             name: 'ingredients',
@@ -47,17 +57,18 @@ export default {
     ],
     preview: {
         select: {
-            title: 'name',
+            name: 'name',
             media: 'image',
+            vegan: 'vegan',
             ingredient0: 'ingredients.0.name',
             ingredient1: 'ingredients.1.name',
             ingredient2: 'ingredients.2.name',
             ingredient3: 'ingredients.3.name',
         },
-        prepare: ({ veg, title, media, ...ingredients }) => {
+        prepare: ({ name, vegan, media, ...ingredients }) => {
             const ingredient = Object.values(ingredients).filter(Boolean).join(', ');
             return {
-                title,
+                title: `${name} ${vegan ? '🌱' : ''}`,
                 media,
                 subtitle: ingredient
             }

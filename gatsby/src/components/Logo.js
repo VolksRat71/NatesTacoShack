@@ -37,14 +37,13 @@ const LogoStyles = styled.div`
     grid-gap: 2em;
     transform: translateY(-0.7em);
   }
-
   .taco-shack {
     font-size: 2.5em;
     letter-spacing: 0.2em;
-    transform: translateY(-0.15em);
+    transform: translateY(-0.2em);
   }
   .nates {
-    transform: scale(1.4);
+    transform: scale(1.4) translateY(0.2em);
     display: block;
     text-shadow: 0.18em 0.18em 0 rgba(0, 0, 0, 0.2);
     perspective: 100px;
@@ -95,22 +94,22 @@ const LogoStyles = styled.div`
 `;
 
 export default function Logo() {
-    return (
-        <LogoStyles className="logo">
-            <div className="inner">
-                <span className="est">EST 1994</span>
-                <h1>
-                    <span className="nates">
-                        <span className="letter N">N</span>
-                        <span className="letter a">a</span>
-                        <span className="letter t">t</span>
-                        <span className="letter e">e</span>
-                        <span className="letter apos">'</span>
-                        <span className="letter s">s</span>
-                    </span>
-                    <span className="taco-shack">Taco Shack</span>
-                </h1>
-            </div>
-        </LogoStyles>
-    );
+  return (
+    <LogoStyles className="logo">
+      <div className="inner">
+        <span className="est">EST 1994</span>
+        <h1>
+          <span className="nates">
+            <span className="letter N">N</span>
+            <span className="letter a">a</span>
+            <span className="letter t">t</span>
+            <span className="letter e">e</span>
+            <span className="letter apos">'</span>
+            <span className="letter s">s</span>
+          </span>
+          <span className="taco-shack">Taco Shack</span>
+        </h1>
+      </div>
+    </LogoStyles>
+  );
 }

@@ -5,6 +5,9 @@ import Logo from './Logo';
 
 const NavStyles = styled.nav`
     margin-bottom: 3rem;
+    .logo {
+        transform: translateY(-25%);
+    }
     ul {
         margin: 0;
         padding: 0;
@@ -13,11 +16,13 @@ const NavStyles = styled.nav`
         list-style: none;
         grid-template-columns: 1fr 1fr auto 1fr 1fr;
         grid-gap: 2rem;
-        align-items: center
+        align-items: center;
+        margin-top: -6rem;
     }
     li {
         --rotate: -2deg;
         transform: rotate(var(--rotate));
+        transition-duration: 0.1s;
         order: 1;
         &:nth-child(1) {
             --rotate: 1deg;

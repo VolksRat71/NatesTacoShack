@@ -1,4 +1,5 @@
 import { GiTacos as icon } from 'react-icons/gi';
+import ingredient from './ingredient';
 
 export default {
     name: 'taco',
@@ -42,6 +43,24 @@ export default {
             title: 'Ingredients',
             type: 'array',
             of: [{ type: 'reference', to: [{ type: 'ingredient' }] }]
+        },
+    ],
+    preview: {
+        select: {
+            title: 'name',
+            media: 'image',
+            ingredient0: 'ingredients.0.name',
+            ingredient1: 'ingredients.1.name',
+            ingredient2: 'ingredients.2.name',
+            ingredient3: 'ingredients.3.name',
+        },
+        prepare: ({ title, media, ...ingredients }) => {
+            const ingredient = Object.values(ingredients).filter(Boolean).join(', ')
+            return {
+                title,
+                media,
+                subtitle: ingredient
+            }
         }
-    ]
+    }
 }

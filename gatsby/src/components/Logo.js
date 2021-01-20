@@ -4,6 +4,7 @@ import stripes from '../assets/images/stripes.svg';
 
 const LogoStyles = styled.div`
   /* This value controls the entire size of the logo*/
+  border-radius: 50% 50% 2.4em 2.4em;
   font-size: 6px;
   font-size: clamp(1px, 0.65vw, 8px);
   width: 30em;
@@ -16,6 +17,7 @@ const LogoStyles = styled.div`
   border: var(--borderSize) solid white;
   display: flex;
   .inner {
+    border-radius: 50% 50% 1.8em 1.8em;
     margin: var(--borderSize);
     flex: 1;
     background: var(--white);
@@ -38,9 +40,10 @@ const LogoStyles = styled.div`
     transform: translateY(-0.7em);
   }
   .taco-shack {
-    font-size: 2.5em;
+    font-size: 2.6em;
     letter-spacing: 0.2em;
-    transform: translateY(-0.2em);
+    transform: translateY(-0.3em);
+    text-shadow: 0.08em 0.08em 0 rgba(0, 0, 0, 0.2);
   }
   .nates {
     transform: scale(1.4) translateY(0.2em);

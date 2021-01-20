@@ -22,7 +22,7 @@ const NavStyles = styled.nav`
     li {
         --rotate: -2deg;
         transform: rotate(var(--rotate));
-        transition-duration: 0.1s;
+        transition-duration: 0.12s;
         order: 1;
         &:nth-child(1) {
             --rotate: 1deg;
@@ -34,7 +34,7 @@ const NavStyles = styled.nav`
             --rotate: 2.5deg;
         }
         &:hover {
-            --rotate: 3deg;
+            --rotate: 5deg;
         }
     }
     a {

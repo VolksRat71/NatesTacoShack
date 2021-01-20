@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
   :root {
     --purple: #682a8d;
     --black: #2E2E2E;
-    --orange: #ff781f;
+    --pale-yellow: #fCEEA7;
     --white: #fff;
     --grey: #efefef;
   }

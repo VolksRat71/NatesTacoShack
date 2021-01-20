@@ -58,7 +58,7 @@ export default function Nav() {
                     <Link to="/">Specials &amp; Such</Link>
                 </li>
                 <li>
-                    <Link to="/tacos/">Taco Menu</Link>
+                    <Link to="/tacos">Taco Menu</Link>
                 </li>
                 <li>
                     <Link to="/"><Logo /></Link>

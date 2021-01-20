@@ -68,7 +68,7 @@ export default {
         prepare: ({ name, vegan, media, ...ingredients }) => {
             const ingredient = Object.values(ingredients).filter(Boolean).join(', ');
             return {
-                title: `${name} ${vegan ? '🌱' : ''}`,
+                title: `${name}${vegan ? '🌱' : ''}`,
                 media,
                 subtitle: ingredient
             }

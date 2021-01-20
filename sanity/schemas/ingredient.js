@@ -21,14 +21,6 @@ export default {
             options: {
                 layout: 'checkbox',
             },
-        },
-        {
-            name: 'image',
-            title: 'Image',
-            type: 'image',
-            options: {
-                hotspot: true
-            }
         }
     ],
     preview: {

@@ -2,7 +2,9 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import TacoList from '../components/TacoList';
 
-export default function TacoPage({ data: { allSanityTaco: { tacos } } }) {
+export default function TacoPage({
+    data: { allSanityTaco: { tacos }
+    } }) {
     console.log(tacos)
 
     return (

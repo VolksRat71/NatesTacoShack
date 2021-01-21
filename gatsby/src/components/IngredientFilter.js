@@ -3,20 +3,22 @@ import { graphql, useStaticQuery, Link } from 'gatsby';
 import styled from 'styled-components';
 
 const IngredientStyles = styled.div`
-    font-size: 0.7em;
+    /* font-size: 0.7em; */
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     gap: 1rem;
     margin-bottom: 4rem;
-    .left {
+    .cw {
+        font-size: 0.85em;
         transform: rotate(1.5deg);
         &:hover {
             transform: scale(1.02);
             transform: rotate(-1.5deg);
         }
     }
-    .right {
+    .ccw {
+        font-size: 0.75em;
         transform: rotate(-1.5deg);
         &:hover {
             transform: scale(1.02);
@@ -80,7 +82,7 @@ export default function IngredientFilter() {
             {ingredientsWithCounts.map((ingredient, i) => (
                 <Link
                     key={i}
-                    className={i % 2 == 0 ? "left" : "right"}
+                    className={Math.floor(Math.random() * 2) % 2 === 0 ? "cw" : "ccw"}
                     to={`/ingredient/${ingredient[0].replace(/\s/g, '-').toLowerCase()}`}
                 >
                     <span className="name">{ingredient[0]}</span>

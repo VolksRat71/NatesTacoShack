@@ -12,9 +12,15 @@ const GlobalStyles = createGlobalStyle`
   }
   html {
     background-image: url(${bg});
-    background-size: 50%;
+    background-size: 45rem;
     background-attachment: fixed;
     font-size: 10px;
+    animation: animation 750s linear infinite;
+  }
+  @keyframes animation {
+    100%{
+      background-position:150em -300em;
+    }
   }
   body {
     font-size: 2rem;

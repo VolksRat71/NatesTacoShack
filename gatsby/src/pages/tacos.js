@@ -1,14 +1,15 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import TacoList from '../components/TacoList';
+import IngredientFilter from '../components/IngredientFilter';
 
 export default function TacoPage({
     data: { allSanityTaco: { tacos }
     } }) {
-    console.log(tacos)
 
     return (
         <>
+            <IngredientFilter />
             <TacoList tacos={tacos} />
         </>
     )

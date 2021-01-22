@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import shuffle from '../utils/shuffle';
 
 const TacoGridStyles = styled.div`
     display: grid;
@@ -46,6 +47,7 @@ function SingleTaco({
 }
 
 export default function TacoList({ tacos }) {
+    shuffle(tacos)
     return (
         <TacoGridStyles>
             {tacos.map(taco => {

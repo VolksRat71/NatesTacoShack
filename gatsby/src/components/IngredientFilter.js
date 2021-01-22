@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql, useStaticQuery, Link } from 'gatsby';
 import styled from 'styled-components';
+import shuffle from '../utils/shuffle';
 
 const IngredientStyles = styled.div`
     /* font-size: 0.7em; */
@@ -77,7 +78,7 @@ export default function IngredientFilter() {
         }
         `)
 
-    const ingredientsWithCounts = countTacosInIngredients(tacos);
+    const ingredientsWithCounts = shuffle(countTacosInIngredients(tacos));
     return (
         <IngredientStyles>
             {ingredientsWithCounts.map(ingredient => (

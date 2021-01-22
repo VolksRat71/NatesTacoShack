@@ -15,7 +15,15 @@ async function turnTacosIntoPages({ graphql, actions }) {
         }
     `)
 
-    // nodes.forEach(({ name }) => console.log(name))
+    nodes.forEach(({ name, slug: { current } }) => {
+        actions.createPage({
+            path: `/tacos/${current}`,
+            component: tacoTemplate,
+            context: {
+                slug: current
+            }
+        })
+    })
 }
 
 export async function createPages(params) {

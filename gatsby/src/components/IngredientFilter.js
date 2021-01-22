@@ -52,7 +52,6 @@ const IngredientStyles = styled.div`
 
 function countTacosInIngredients({ nodes }) {
     let hashTable = {}
-    console.clear()
     nodes.forEach(({ ingredients }) => {
         ingredients.forEach(({ name, _id }) => {
             !hashTable[name] ?
@@ -60,8 +59,6 @@ function countTacosInIngredients({ nodes }) {
                 hashTable[name]['count']++
         })
     })
-
-    console.log(Object.entries(hashTable))
 
     return Object.entries(hashTable)
 }
@@ -80,8 +77,6 @@ export default function IngredientFilter() {
         }
         `)
 
-
-    // console.log(ingredientsWithCounts);
     const ingredientsWithCounts = countTacosInIngredients(tacos);
     return (
         <IngredientStyles>

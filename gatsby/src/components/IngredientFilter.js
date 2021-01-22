@@ -52,14 +52,18 @@ const IngredientStyles = styled.div`
 
 function countTacosInIngredients({ nodes }) {
     let hashTable = {}
-
+    console.clear()
     nodes.forEach(({ ingredients }) => {
-        ingredients.forEach(({ name }) => {
-            !hashTable[name] ? hashTable[name] = 1 : hashTable[name]++
+        ingredients.forEach(({ name, _id }) => {
+            !hashTable[name] ?
+                hashTable[name] = { count: 1, _id } :
+                hashTable[name]['count']++
         })
     })
 
-    return Object.entries(hashTable);
+    console.log(Object.entries(hashTable))
+
+    return Object.entries(hashTable)
 }
 
 export default function IngredientFilter() {
@@ -69,24 +73,26 @@ export default function IngredientFilter() {
                 nodes {
                     ingredients {
                         name
+                        _id
                     }
                 }
             }
         }
         `)
 
-    const ingredientsWithCounts = countTacosInIngredients(tacos);
 
+    // console.log(ingredientsWithCounts);
+    const ingredientsWithCounts = countTacosInIngredients(tacos);
     return (
         <IngredientStyles>
-            {ingredientsWithCounts.map((ingredient, i) => (
+            {ingredientsWithCounts.map(ingredient => (
                 <Link
-                    key={i}
+                    key={ingredient[1]._id}
                     className={Math.floor(Math.random() * 2) % 2 === 0 ? "cw" : "ccw"}
                     to={`/ingredient/${ingredient[0].replace(/\s/g, '-').toLowerCase()}`}
                 >
                     <span className="name">{ingredient[0]}</span>
-                    <span className="count">{ingredient[1]}</span>
+                    <span className="count">{ingredient[1].count}</span>
                 </Link>
             ))}
         </IngredientStyles>

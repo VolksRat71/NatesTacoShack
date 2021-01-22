@@ -15,7 +15,7 @@ async function turnTacosIntoPages({ graphql, actions }) {
         }
     `)
 
-    nodes.forEach(({ name }) => console.log(name))
+    // nodes.forEach(({ name }) => console.log(name))
 }
 
 export async function createPages(params) {

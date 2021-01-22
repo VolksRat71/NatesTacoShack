@@ -11,8 +11,10 @@ export const query = graphql`
         taco: sanityTaco(slug: {current: {eq: $slug}}){
             _id
             name
+            vegan
             ingredients {
                 name
+                vegan
             }
         }
     }

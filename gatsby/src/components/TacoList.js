@@ -41,7 +41,9 @@ function SingleTaco({
                 </h2>
             </Link>
             <p>{ingredients.map(({ name }) => name).join(', ')}</p>
-            <Img fluid={fluid} alt={name} />
+            <Link to={`/tacos/${current}`}>
+                <Img fluid={fluid} alt={name} />
+            </Link>
         </TacoStyles>
     )
 }

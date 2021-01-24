@@ -4,20 +4,30 @@ import TacoList from '../components/TacoList';
 import IngredientFilter from '../components/IngredientFilter';
 
 export default function TacoPage({
-    data: { allSanityTaco: { tacos }
+    data: { allSanityTaco: { tacos } },
+    pageContext: { ingredient
     } }) {
-
     return (
         <>
-            <IngredientFilter />
+            <IngredientFilter activeIngredient={ingredient} />
             <TacoList tacos={tacos} />
         </>
     )
 };
 
 export const query = graphql`
-  query {
-    allSanityTaco {
+  query TacoQuery($ingredientRegex: String){
+    allSanityTaco(
+        filter: {
+            ingredients: {
+                elemMatch: {
+                    name: {
+                        regex: $ingredientRegex
+                    }
+                }
+            }
+        }
+    ) {
         # renamed names to tacos in props
         tacos: nodes {
             id

@@ -22,12 +22,11 @@ export default function SingleTacoPage({
         taco: { name, vegan, ingredients,
             image: { asset: { fluid } } }
     } }) {
-    console.log(ingredients)
     return (
         <TacoGrid>
             <Img fluid={fluid}></Img>
             <div>
-                <h2 className="mark">{name}{!vegan ? '' : '🌱'}</h2>
+                <h1 className="mark">{name}{!vegan ? '' : '🌱'}</h1>
                 <ul>
                     {ingredients.map(({ _id, name, vegan }) => (
                         <li

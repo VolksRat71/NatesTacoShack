@@ -1,7 +1,7 @@
 # <h1 align="center"> 🚨🤫 I am Currently Under Construction! 🤫🚨</h1>
 
 <p align="center">
- <img width="20%" src="./images/NatesTacoShack.png">
+ <img width="80%" src="./images/Gatsby-Laptop-Mockup.gif">
 </p>
 
 ___

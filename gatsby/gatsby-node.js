@@ -80,7 +80,7 @@ async function fetchBeersAndTurnIntoNodes({
 }
 
 async function turnChefsIntoPages({ graphql, actions }) {
-    const { data: { allSanityPerson: { totalCount } } } = await graphql(`
+    const { data: { allSanityPerson: { totalCount } }, data } = await graphql(`
     query {
         allSanityPerson {
           totalCount
@@ -98,8 +98,8 @@ async function turnChefsIntoPages({ graphql, actions }) {
     const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
     const pageCount = Math.ceil(totalCount / pageSize)
 
+
     Array.from({ length: pageCount }).forEach((_, i) => {
-        console.log(`Creating Page ${i}`)
         actions.createPage({
             path: `/chefs/${i + 1}`,
             component: path.resolve('./src/pages/chefs.js'),

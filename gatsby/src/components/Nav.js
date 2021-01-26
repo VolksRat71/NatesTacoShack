@@ -64,7 +64,7 @@ export default function Nav() {
                     <Link to="/"><Logo /></Link>
                 </li>
                 <li>
-                    <Link to="/chefs">Meet the Chefs</Link>
+                    <Link to="/chefs/1">Meet the Chefs</Link>
                 </li>
                 <li>
                     <Link to="/order">Delivery &amp; Curbside</Link>

@@ -35,13 +35,14 @@ const SingleChef = styled.div`
     }
 `;
 
-export default function ChefPage({ pageContext: { pageSize, pageCount, currentPage, skip, base }, data: { allSanityPerson: { chefs } } }) {
+export default function ChefPage({
+    pageContext: { pageSize, pageCount, currentPage, skip },
+    data: { allSanityPerson: { chefs }
+    } }) {
     return (
         <Pagination
-            pageSize={pageSize}
             pageCount={pageCount}
             currentPage={currentPage}
-            skip={skip}
             base='/chefs'
         >
             <ChefsGrid>
@@ -64,7 +65,7 @@ export default function ChefPage({ pageContext: { pageSize, pageCount, currentPa
 };
 
 export const query = graphql`
-    query($skip: Int = 0, $pageSize: Int = 2) {
+    query($skip: Int = 0, $pageSize: Int = 3) {
         allSanityPerson(skip: $skip, limit: $pageSize) {
             chefs: nodes {
                 name

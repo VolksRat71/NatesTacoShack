@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import Pagination from '../components/Pagination';
 
 const ChefsGrid = styled.div`
     display: grid;
@@ -34,9 +35,15 @@ const SingleChef = styled.div`
     }
 `;
 
-export default function ChefPage({ data: { allSanityPerson: { chefs } } }) {
+export default function ChefPage({ pageContext: { pageSize, pageCount, currentPage, skip, base }, data: { allSanityPerson: { chefs } } }) {
     return (
-        <>
+        <Pagination
+            pageSize={pageSize}
+            pageCount={pageCount}
+            currentPage={currentPage}
+            skip={skip}
+            base='/chefs'
+        >
             <ChefsGrid>
                 {chefs.map(({
                     id, name, description,
@@ -52,7 +59,7 @@ export default function ChefPage({ data: { allSanityPerson: { chefs } } }) {
                     </SingleChef>
                 ))}
             </ChefsGrid>
-        </>
+        </Pagination>
     )
 };
 

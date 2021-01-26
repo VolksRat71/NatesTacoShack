@@ -106,7 +106,8 @@ async function turnChefsIntoPages({ graphql, actions }) {
             context: {
                 skip: i * pageSize,
                 currentPage: i + 1,
-                pageSize
+                pageSize,
+                pageCount
             }
         })
     })

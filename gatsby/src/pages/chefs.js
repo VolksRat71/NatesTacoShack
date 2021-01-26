@@ -57,8 +57,8 @@ export default function ChefPage({ data: { allSanityPerson: { chefs } } }) {
 };
 
 export const query = graphql`
-    query {
-        allSanityPerson {
+    query($skip: Int = 0, $pageSize: Int = 2) {
+        allSanityPerson(skip: $skip, limit: $pageSize) {
             chefs: nodes {
                 name
                 id

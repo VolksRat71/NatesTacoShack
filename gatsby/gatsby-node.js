@@ -79,6 +79,40 @@ async function fetchBeersAndTurnIntoNodes({
 
 }
 
+async function turnChefsIntoPages({ graphql, actions }) {
+    const { data: { allSanityPerson: { totalCount } } } = await graphql(`
+    query {
+        allSanityPerson {
+          totalCount
+          nodes {
+            id
+            name
+            slug {
+              current
+            }
+          }
+        }
+      }
+    `);
+
+    const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
+    const pageCount = Math.ceil(totalCount / pageSize)
+
+    Array.from({ length: pageCount }).forEach((_, i) => {
+        console.log(`Creating Page ${i}`)
+        actions.createPage({
+            path: `/chefs/${i + 1}`,
+            component: path.resolve('./src/pages/chefs.js'),
+            context: {
+                skip: i * pageSize,
+                currentPage: i + 1,
+                pageSize
+            }
+        })
+    })
+
+}
+
 export async function sourceNodes(params) {
     await Promise.all([fetchBeersAndTurnIntoNodes(params)])
 }
@@ -86,7 +120,8 @@ export async function sourceNodes(params) {
 export async function createPages(params) {
     await Promise.all([
         turnTacosIntoPages(params),
-        turnIngredientsIntoPages(params)
+        turnIngredientsIntoPages(params),
+        turnChefsIntoPages(params)
     ])
 }
 

@@ -35,7 +35,6 @@ const SingleChef = styled.div`
 `;
 
 export default function ChefPage({ data: { allSanityPerson: { chefs } } }) {
-    console.log(chefs);
     return (
         <>
             <ChefsGrid>
@@ -45,7 +44,7 @@ export default function ChefPage({ data: { allSanityPerson: { chefs } } }) {
                     image: { asset: { fluid } }
                 }) => (
                     <SingleChef key={id}>
-                        <Link to={`chefs/${current}`}>
+                        <Link to={`/chefs/${current}`}>
                             <h2><span className="mark">{name}</span></h2>
                             <Img fluid={fluid} />
                         </Link>

@@ -95,7 +95,7 @@ export default function IngredientFilter() {
                 <Link
                     key={_id}
                     className={Math.floor(Math.random() * 2) % 2 === 0 ? "cw" : "ccw"}
-                    to={`/ingredient/${name}`}
+                    to={`/ingredient/${name.replace(/\s+/g, '-').toLowerCase()}`}
                 >
                     <span className="name">{name}</span>
                     <span className="count">{count}</span>

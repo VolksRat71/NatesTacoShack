@@ -9,6 +9,7 @@ exports.components = {
   "component---src-pages-index-js": () => import("./../../../src/pages/index.js" /* webpackChunkName: "component---src-pages-index-js" */),
   "component---src-pages-order-js": () => import("./../../../src/pages/order.js" /* webpackChunkName: "component---src-pages-order-js" */),
   "component---src-pages-tacos-js": () => import("./../../../src/pages/tacos.js" /* webpackChunkName: "component---src-pages-tacos-js" */),
+  "component---src-templates-chef-js": () => import("./../../../src/templates/Chef.js" /* webpackChunkName: "component---src-templates-chef-js" */),
   "component---src-templates-taco-js": () => import("./../../../src/templates/Taco.js" /* webpackChunkName: "component---src-templates-taco-js" */)
 }
 

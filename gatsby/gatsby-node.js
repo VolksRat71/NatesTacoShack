@@ -42,7 +42,7 @@ async function turnIngredientsIntoPages({ graphql, actions }) {
 
     nodes.forEach(({ name }) => {
         actions.createPage({
-            path: `ingredient/${name}`,
+            path: `ingredient/${name.replace(/\s+/g, '-').toLowerCase()}`,
             component: tacoTemplate,
             context: {
                 ingredient: name,
@@ -80,7 +80,9 @@ async function fetchBeersAndTurnIntoNodes({
 }
 
 async function turnChefsIntoPages({ graphql, actions }) {
-    const { data: { allSanityPerson: { totalCount } }, data } = await graphql(`
+    const { data: {
+        allSanityPerson: { totalCount, nodes }
+    } } = await graphql(`
     query {
         allSanityPerson {
           totalCount
@@ -94,6 +96,18 @@ async function turnChefsIntoPages({ graphql, actions }) {
         }
       }
     `);
+
+    nodes.forEach(({ id, name, slug: { current } }) => {
+        actions.createPage({
+            component: path.resolve('./src/templates/Chef.js'),
+            path: `/chefs/${current}`,
+            context: {
+                slug: current,
+                name,
+                id
+            }
+        })
+    })
 
     const pageSize = parseInt(process.env.GATSBY_PAGE_SIZE);
     const pageCount = Math.ceil(totalCount / pageSize)

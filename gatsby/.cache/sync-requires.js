@@ -12,6 +12,7 @@ exports.components = {
   "component---src-pages-index-js": (preferDefault(require("C:\\Users\\natha\\Desktop\\Current Projects\\NatesTacoShack\\gatsby\\src\\pages\\index.js"))),
   "component---src-pages-order-js": (preferDefault(require("C:\\Users\\natha\\Desktop\\Current Projects\\NatesTacoShack\\gatsby\\src\\pages\\order.js"))),
   "component---src-pages-tacos-js": (preferDefault(require("C:\\Users\\natha\\Desktop\\Current Projects\\NatesTacoShack\\gatsby\\src\\pages\\tacos.js"))),
+  "component---src-templates-chef-js": (preferDefault(require("C:\\Users\\natha\\Desktop\\Current Projects\\NatesTacoShack\\gatsby\\src\\templates\\Chef.js"))),
   "component---src-templates-taco-js": (preferDefault(require("C:\\Users\\natha\\Desktop\\Current Projects\\NatesTacoShack\\gatsby\\src\\templates\\Taco.js")))
 }
 

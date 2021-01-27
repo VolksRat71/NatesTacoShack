@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
+import SEO from '../components/SEO';
 
 const TacoGrid = styled.div`
     display: grid;
@@ -22,23 +23,27 @@ export default function SingleTacoPage({
         taco: { name, vegan, ingredients,
             image: { asset: { fluid } } }
     } }) {
+    name = `${name}${!vegan ? '' : '🌱'}`
     return (
-        <TacoGrid>
-            <Img fluid={fluid}></Img>
-            <div>
-                <h1 className="mark">{name}{!vegan ? '' : '🌱'}</h1>
-                <ul>
-                    {ingredients.map(({ _id, name, vegan }) => (
-                        <li
-                            className={Math.floor(Math.random() * 2) % 2 === 0 ? "largeFont" : "smallFont"}
-                            key={_id}
-                        >
-                            {name}{!vegan ? '' : '🌱'}
-                        </li>
-                    ))}
-                </ul>
-            </div>
-        </TacoGrid>
+        <>
+            <SEO title={name} image={fluid?.src} />
+            <TacoGrid>
+                <Img fluid={fluid}></Img>
+                <div>
+                    <h1 className="mark">{name}</h1>
+                    <ul>
+                        {ingredients.map(({ _id, name, vegan }) => (
+                            <li
+                                className={Math.floor(Math.random() * 2) % 2 === 0 ? "largeFont" : "smallFont"}
+                                key={_id}
+                            >
+                                {name}{!vegan ? '' : '🌱'}
+                            </li>
+                        ))}
+                    </ul>
+                </div>
+            </TacoGrid>
+        </>
     )
 }
 

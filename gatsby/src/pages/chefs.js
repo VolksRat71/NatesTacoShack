@@ -3,6 +3,7 @@ import { graphql, Link } from 'gatsby';
 import Img from 'gatsby-image';
 import styled from 'styled-components';
 import Pagination from '../components/Pagination';
+import SEO from '../components/SEO';
 
 const ChefsGrid = styled.div`
     display: grid;
@@ -40,27 +41,30 @@ export default function ChefPage({
     data: { allSanityPerson: { chefs }
     } }) {
     return (
-        <Pagination
-            pageCount={pageCount}
-            currentPage={currentPage}
-            base='/chefs'
-        >
-            <ChefsGrid>
-                {chefs.map(({
-                    id, name, description,
-                    slug: { current },
-                    image: { asset: { fluid } }
-                }) => (
-                    <SingleChef key={id}>
-                        <Link to={`/chefs/${current}`}>
-                            <h2><span className="mark">{name}</span></h2>
-                            <Img fluid={fluid} />
-                        </Link>
-                        <p className="description">{description}</p>
-                    </SingleChef>
-                ))}
-            </ChefsGrid>
-        </Pagination>
+        <>
+            <SEO title={`Chefs - Page ${currentPage}`} />
+            <Pagination
+                pageCount={pageCount}
+                currentPage={currentPage}
+                base='/chefs'
+            >
+                <ChefsGrid>
+                    {chefs.map(({
+                        id, name, description,
+                        slug: { current },
+                        image: { asset: { fluid } }
+                    }) => (
+                        <SingleChef key={id}>
+                            <Link to={`/chefs/${current}`}>
+                                <h2><span className="mark">{name}</span></h2>
+                                <Img fluid={fluid} />
+                            </Link>
+                            <p className="description">{description}</p>
+                        </SingleChef>
+                    ))}
+                </ChefsGrid>
+            </Pagination>
+        </>
     )
 };
 

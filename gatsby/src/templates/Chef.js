@@ -1,6 +1,7 @@
 import React from 'react';
 import { graphql } from 'gatsby';
 import Img from 'gatsby-image';
+import SEO from '../components/SEO';
 
 
 export default function SingleChefPage({
@@ -12,13 +13,16 @@ export default function SingleChefPage({
         } },
 }) {
     return (
-        <div className="center">
-            <h1>
-                <span className="mark">{name}</span>
-            </h1>
-            <Img fluid={fluid} />
-            <p>{description}</p>
-        </div>
+        <>
+            <SEO title={`Chef ${name.split(" ")[0]}`} />
+            <div className="center">
+                <h1>
+                    <span className="mark">{name}</span>
+                </h1>
+                <Img fluid={fluid} />
+                <p>{description}</p>
+            </div>
+        </>
     )
 }
 

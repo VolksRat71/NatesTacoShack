@@ -35,7 +35,7 @@ export default {
             name: 'price',
             title: 'Price',
             type: 'number',
-            description: 'Price of the Taco in cents ($1.95 minimum)',
+            description: 'Price of single taco, price will vary due to quantity',
             validation: Rule => Rule.min(195),
             inputComponent: PriceInput
         },

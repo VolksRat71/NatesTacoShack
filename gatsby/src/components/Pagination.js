@@ -41,7 +41,7 @@ function Pagination({
                 ← Prev
             </Link>
             {Array.from({ length: pageCount }).map((_, i) => (
-                <Link to={`${base}/${i + 1}`}>{i + 1}</Link>
+                <Link key={i} to={`${base}/${i + 1}`}>{i + 1}</Link>
             ))}
             <Link disabled={!hasNextPage} to={`${base}/${nextPage}`}>
                 Next →

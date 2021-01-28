@@ -37,9 +37,9 @@ const SingleChef = styled.div`
 `;
 
 export default function ChefPage({
-    pageContext: { pageSize, pageCount, currentPage, skip },
-    data: { allSanityPerson: { chefs }
-    } }) {
+    pageContext: { pageCount, currentPage },
+    data: { allSanityPerson: { chefs } }
+}) {
     return (
         <>
             <SEO title={`Chefs - Page ${currentPage}`} />

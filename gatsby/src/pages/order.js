@@ -1,10 +1,12 @@
-import { graphql } from 'gatsby';
+import { graphql, Link } from 'gatsby';
 import React from 'react';
 import SEO from '../components/SEO';
 import useForm from '../utils/useForm';
 import Img from 'gatsby-image';
 import calculateTacoPrice from '../utils/calculateTacoPrice';
 import formatMoney from '../utils/formatMoney';
+import OrderStyles from '../styles/OrderStyles';
+import MenuItemStyles from '../styles/MenuItemStyles';
 
 export default function OrdersPage({
     data: { allSanityTaco: { tacos } }
@@ -19,7 +21,7 @@ export default function OrdersPage({
     return (
         <>
             <SEO title="Delivery &amp; Curbside" />
-            <form>
+            <OrderStyles>
                 <fieldset>
                     <legend>Your Info</legend>
                     <label htmlFor="name">Name</label>
@@ -39,15 +41,22 @@ export default function OrdersPage({
                         onChange={updateValue}
                     />
                 </fieldset>
-                <fieldset>
+                <fieldset className="menu">
                     <legend>Menu</legend>
                     {tacos.map(({
-                        name, id, price, image: { asset: { fluid } }
+                        name,
+                        vegan,
+                        id,
+                        price,
+                        slug: { current },
+                        image: { asset: { fluid } }
                     }) => (
-                        <div key={id}>
-                            <Img fluid={fluid} alt={name} />
+                        <MenuItemStyles key={id}>
+                            <Link className="image-wrapper" to={`/tacos/${current}`}>
+                                <Img fluid={fluid} alt={name} />
+                            </Link>
                             <div>
-                                <h2>{name}</h2>
+                                <h2>{name}<span><h5>{vegan ? '🌱' : ''}</h5></span></h2>
                             </div>
                             <div>
                                 {['1', '2', '3'].map((quantity, i) => (
@@ -56,13 +65,13 @@ export default function OrdersPage({
                                     </button>
                                 ))}
                             </div>
-                        </div>
+                        </MenuItemStyles>
                     ))}
                 </fieldset>
-                <fieldset>
+                <fieldset className="order">
                     <legend>Order</legend>
                 </fieldset>
-            </form>
+            </OrderStyles>
         </>
     )
 };
@@ -72,6 +81,7 @@ export const query = graphql`
      allSanityTaco {
          tacos: nodes {
              name
+             vegan
              id
              price
              slug {current}
@@ -85,4 +95,4 @@ export const query = graphql`
          }
      }
  }
-`
+`;

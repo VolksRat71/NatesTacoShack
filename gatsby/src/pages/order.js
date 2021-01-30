@@ -9,6 +9,7 @@ import useTaco from '../utils/useTaco';
 import OrderStyles from '../styles/OrderStyles';
 import MenuItemStyles from '../styles/MenuItemStyles';
 import TacoOrder from '../components/TacoOrder';
+import calculateOrderTotal from '../utils/calculateOrderTotal';
 
 export default function OrdersPage({
     data: { allSanityTaco: { tacos } }
@@ -86,6 +87,10 @@ export default function OrdersPage({
                         removeFromOrder={removeFromOrder}
                         tacos={tacos}
                     />
+                </fieldset>
+                <fieldset>
+                    <h3>Your Total is <span className="mark">{formatMoney(calculateOrderTotal(order, tacos))}</span></h3>
+                    <button type="submit">Order Ahead</button>
                 </fieldset>
             </OrderStyles>
         </>

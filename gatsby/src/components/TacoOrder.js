@@ -29,7 +29,7 @@ export default function TacoOrder({
                             <h2>{name}<span><h5>{vegan ? '🌱' : ''}</h5></span></h2>
                         </div>
                         <div>
-                            {quantity} - {formatMoney(calculateTacoPrice(price, quantity))}
+                            <span className="mark">{quantity} - {formatMoney(calculateTacoPrice(price, quantity))}</span>
                             <button
                                 type="button"
                                 className="remove"

@@ -34,7 +34,6 @@ async function turnIngredientsIntoPages({ graphql, actions }) {
             ingredients: allSanityIngredient {
                 nodes {
                     name
-                    id
                 }
             }
         }

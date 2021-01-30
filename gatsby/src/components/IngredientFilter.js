@@ -80,7 +80,8 @@ export default function IngredientFilter() {
                 }
             }
         }
-        `)
+    `)
+
     const ingredientsWithCounts = countTacosInIngredients(tacos);
 
     return (

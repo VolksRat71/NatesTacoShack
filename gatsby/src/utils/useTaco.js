@@ -1,7 +1,9 @@
-import { useState } from "react";
+import { useContext } from "react";
+import OrderContext from "../components/orderContext";
+
 
 export default function useTaco({ tacos, inputs }) {
-    const [order, setOrder] = useState([]);
+    const [order, setOrder] = useContext(OrderContext);
 
     function addToOrder(orderedTaco) {
         setOrder([...order, orderedTaco]);
@@ -13,6 +15,8 @@ export default function useTaco({ tacos, inputs }) {
             ...order.slice(i + 1)
         ])
     }
+
+    localStorage.setItem('order', JSON.stringify(order))
 
     return {
         order,

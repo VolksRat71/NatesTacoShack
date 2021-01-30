@@ -6,6 +6,7 @@ const OrderStyles = styled.form`
     gap: 20px;
     fieldset {
         display: grid;
+        align-content: start;
         gap: 1rem;
         grid-column: span 2;
         max-height: 600px;

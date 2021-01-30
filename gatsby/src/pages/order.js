@@ -5,8 +5,10 @@ import useForm from '../utils/useForm';
 import Img from 'gatsby-image';
 import calculateTacoPrice from '../utils/calculateTacoPrice';
 import formatMoney from '../utils/formatMoney';
+import useTaco from '../utils/useTaco';
 import OrderStyles from '../styles/OrderStyles';
 import MenuItemStyles from '../styles/MenuItemStyles';
+import TacoOrder from '../components/TacoOrder';
 
 export default function OrdersPage({
     data: { allSanityTaco: { tacos } }
@@ -14,6 +16,11 @@ export default function OrdersPage({
     const { values, updateValue } = useForm({
         name: '',
         email: ''
+    })
+
+    const { order, addToOrder, removeFromOrder } = useTaco({
+        inputs: values,
+        tacos
     })
 
     const { name, email } = values;
@@ -60,7 +67,11 @@ export default function OrdersPage({
                             </div>
                             <div>
                                 {['1', '2', '3'].map((quantity, i) => (
-                                    <button key={i} type="button">
+                                    <button
+                                        key={i}
+                                        type="button"
+                                        onClick={() => addToOrder({ id, quantity })}
+                                    >
                                         {quantity} - {formatMoney(calculateTacoPrice(price, quantity))}
                                     </button>
                                 ))}
@@ -70,6 +81,11 @@ export default function OrdersPage({
                 </fieldset>
                 <fieldset className="order">
                     <legend>Order</legend>
+                    <TacoOrder
+                        order={order}
+                        removeFromOrder={removeFromOrder}
+                        tacos={tacos}
+                    />
                 </fieldset>
             </OrderStyles>
         </>

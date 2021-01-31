@@ -7,7 +7,7 @@
   "scripts": {
     "build": "cross-env NODE_OPTIONS=\"-r esm\" gatsby build",
     "develop": "cross-env NODE_OPTIONS=\"-r esm\" gatsby develop",
-    "start": "npm run develop",
+    "start": "netlify dev",
     "serve": "cross-env NODE_OPTIONS=\"-r esm\" gatsby serve",
     "clean": "gatsby clean",
     "netlify": "netlify dev",

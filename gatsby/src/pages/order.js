@@ -15,21 +15,32 @@ export default function OrdersPage({
     data: { allSanityTaco: { tacos } }
 }) {
     const { values, updateValue } = useForm({
-        name: '',
-        email: ''
+        name: 'nate',
+        email: 'text@email.com'
     })
 
-    const { order, addToOrder, removeFromOrder } = useTaco({
-        inputs: values,
+    const {
+        addToOrder,
+        removeFromOrder,
+        submitOrder,
+        order,
+        error,
+        loading,
+        message
+    } = useTaco({
+        values,
         tacos
     })
 
     const { name, email } = values;
 
+    if (message) {
+        return <p>{message}</p>
+    }
     return (
         <>
             <SEO title="Delivery &amp; Curbside" />
-            <OrderStyles>
+            <OrderStyles onSubmit={submitOrder}>
                 <fieldset>
                     <legend>Your Info</legend>
                     <label htmlFor="name">Name</label>
@@ -90,7 +101,12 @@ export default function OrdersPage({
                 </fieldset>
                 <fieldset>
                     <h3>Your Total is <span className="mark">{formatMoney(calculateOrderTotal(order, tacos))}</span></h3>
-                    <button type="submit">Order Ahead</button>
+                    <div>
+                        {error ? <p>Error: {error}</p> : ''}
+                    </div>
+                    <button type="submit">
+                        {loading ? "Placing Order..." : "Order Ahead"}
+                    </button>
                 </fieldset>
             </OrderStyles>
         </>

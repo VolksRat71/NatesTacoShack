@@ -1,9 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import OrderContext from "../components/orderContext";
+import attachNamesAndPrices from "./attachNamesAndPrices";
+import calculateOrderTotal from "./calculateOrderTotal";
+import formatMoney from "./formatMoney";
 
 
-export default function useTaco({ tacos, inputs }) {
+export default function useTaco({ tacos, values: { name, email } }) {
     const [order, setOrder] = useContext(OrderContext);
+    const [error, setError] = useState()
+    const [loading, setLoading] = useState(false);
+    const [message, setMessage] = useState('');
 
     function addToOrder(orderedTaco) {
         setOrder([...order, orderedTaco]);
@@ -16,11 +22,49 @@ export default function useTaco({ tacos, inputs }) {
         ])
     }
 
+    async function submitOrder(e) {
+        e.preventDefault();
+        setLoading(true);
+        setMessage(null);
+        setError(null);
+
+        const body = {
+            order: attachNamesAndPrices(order, tacos),
+            total: formatMoney(calculateOrderTotal(order, tacos)),
+            name,
+            email
+        }
+
+        const res = fetch(`${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(body)
+        });
+        const text = await JSON.parse(res.message);
+
+        if (res.status >= 400 && res.status < 600) {
+            setError(text.message)
+            setLoading(false);
+            setOrder([]);
+        } else {
+            setMessage('Success! Your order will be ready in 20 minutes.')
+            setLoading(false);
+            setOrder([]);
+        }
+
+    }
+
     localStorage.setItem('order', JSON.stringify(order))
 
     return {
-        order,
         addToOrder,
-        removeFromOrder
+        removeFromOrder,
+        submitOrder,
+        order,
+        error,
+        loading,
+        message,
     }
 }

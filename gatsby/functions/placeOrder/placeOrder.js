@@ -10,6 +10,7 @@ function generateOrderEmail({ order, total }) {
     font-size: 20px;
     text-align: center;
     ">
+                <img style="width: 20%" src="https://raw.githubusercontent.com/VolksRat71/NatesTacoShack/main/images/NatesTacoShack.png" alt="Nates Taco Shack Logo" />
                 <h2>Thank you for ordering!</h2>
                 <p>Your order will be ready in 20 minutes!</p>
                 <ul style="list-style: none">
@@ -21,7 +22,7 @@ function generateOrderEmail({ order, total }) {
     }).join('')}
                 </ul>
                 <p>Your total is <strong>${total}</strong> due at pickup!</p>
-                <p>Hello! This <a href="https://nathanryan.tech/">web developer</a> is looking for a good job 😊</p>
+                <p>Hello! The <a href="https://nathanryan.tech/">web developer</a>  for this site is looking for a good job 😊</p>
             </div>
     `
 };

@@ -8,7 +8,9 @@ export default {
     fields: [
         {
             name: 'chef',
-            title: 'Who is on today?'
+            title: 'Who is on today?',
+            type: 'array',
+            of: [{ type: 'reference', to: [{ type: 'person' }] }]
         }
     ]
 }

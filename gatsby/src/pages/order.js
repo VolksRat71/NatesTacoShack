@@ -15,8 +15,8 @@ export default function OrdersPage({
     data: { allSanityTaco: { tacos } }
 }) {
     const { values, updateValue } = useForm({
-        name: 'nate',
-        email: 'text@email.com'
+        name: '',
+        email: ''
     })
 
     const {
@@ -41,7 +41,7 @@ export default function OrdersPage({
         <>
             <SEO title="Delivery &amp; Curbside" />
             <OrderStyles onSubmit={submitOrder}>
-                <fieldset>
+                <fieldset disabled={loading}>
                     <legend>Your Info</legend>
                     <label htmlFor="name">Name</label>
                     <input
@@ -60,7 +60,7 @@ export default function OrdersPage({
                         onChange={updateValue}
                     />
                 </fieldset>
-                <fieldset className="menu">
+                <fieldset className="menu" disabled={loading}>
                     <legend>Menu</legend>
                     {tacos.map(({
                         name,
@@ -91,7 +91,7 @@ export default function OrdersPage({
                         </MenuItemStyles>
                     ))}
                 </fieldset>
-                <fieldset className="order">
+                <fieldset className="order" disabled={loading}>
                     <legend>Order</legend>
                     <TacoOrder
                         order={order}
@@ -99,7 +99,7 @@ export default function OrdersPage({
                         tacos={tacos}
                     />
                 </fieldset>
-                <fieldset>
+                <fieldset disabled={loading}>
                     <h3>Your Total is <span className="mark">{formatMoney(calculateOrderTotal(order, tacos))}</span></h3>
                     <div>
                         {error ? <p>Error: {error}</p> : ''}

@@ -26,12 +26,6 @@ function generateOrderEmail({ order, total }) {
     `
 };
 
-async function wait(ms = 0) {
-    return new Promise((resolve, reject) => {
-        setTimeout(resolve, ms)
-    })
-}
-
 const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
@@ -46,7 +40,6 @@ exports.handler = async (event, context) => {
     const requiredFields = ['email', 'name', 'order']
 
     for (field of requiredFields) {
-        console.log(`Checking that ${field} is good`);
         if (!body[field]) {
             return {
                 statusCode: 400,
@@ -55,10 +48,17 @@ exports.handler = async (event, context) => {
         }
     }
 
+    if (!body.order.length) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ message: 'You must have items to create an order!' })
+        }
+    }
+
     const info = await transporter.sendMail({
         from: "Nates Taco Shack <nate@example.com>",
         to: `${body.name} <${body.email}>`,
-        subject: "New order!",
+        subject: "🌮 Nates Taco Shack Order",
         html: generateOrderEmail({ order: body.order, total: body.total })
     })
     return {

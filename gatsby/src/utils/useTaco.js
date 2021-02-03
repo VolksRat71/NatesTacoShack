@@ -25,7 +25,6 @@ export default function useTaco({ tacos, values: { name, email } }) {
     async function submitOrder(e) {
         e.preventDefault();
         setLoading(true);
-        setMessage(null);
         setError(null);
 
         const body = {
@@ -35,21 +34,20 @@ export default function useTaco({ tacos, values: { name, email } }) {
             email
         }
 
-        const res = fetch(`${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`, {
+        const res = await fetch(`${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json',
             },
             body: JSON.stringify(body)
         });
-        const text = await JSON.parse(res.message);
+        const text = JSON.parse(await res.text());
 
         if (res.status >= 400 && res.status < 600) {
             setError(text.message)
             setLoading(false);
-            setOrder([]);
         } else {
-            setMessage('Success! Your order will be ready in 20 minutes.')
+            setMessage('Success! Your order will be ready in 20 minutes. Check your email for order details 😊')
             setLoading(false);
             setOrder([]);
         }

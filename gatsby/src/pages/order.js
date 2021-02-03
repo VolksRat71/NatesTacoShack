@@ -16,7 +16,8 @@ export default function OrdersPage({
 }) {
     const { values, updateValue } = useForm({
         name: '',
-        email: ''
+        email: '',
+        chiliSyrup: ''
     })
 
     const {
@@ -32,7 +33,7 @@ export default function OrdersPage({
         tacos
     })
 
-    const { name, email } = values;
+    const { name, email, chiliSyrup } = values;
 
     if (message) {
         return <p>{message}</p>
@@ -57,6 +58,13 @@ export default function OrdersPage({
                         name="email"
                         id="email"
                         value={email}
+                        onChange={updateValue}
+                    />
+                    <input
+                        type="chiliSyrup"
+                        name="chiliSyrup"
+                        id="chiliSyrup"
+                        value={chiliSyrup}
                         onChange={updateValue}
                     />
                 </fieldset>

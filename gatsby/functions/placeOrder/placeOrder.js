@@ -37,6 +37,14 @@ const transporter = nodemailer.createTransport({
 
 exports.handler = async (event, context) => {
     const body = JSON.parse(event.body);
+
+    if (body.chiliSyrup) {
+        return {
+            statusCode: 400,
+            body: JSON.stringify({ message: 'Alexa, Initiate self destruct. ERR 45784' })
+        }
+    }
+
     const requiredFields = ['email', 'name', 'order']
 
     for (field of requiredFields) {

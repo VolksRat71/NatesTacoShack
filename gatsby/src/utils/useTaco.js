@@ -5,7 +5,7 @@ import calculateOrderTotal from "./calculateOrderTotal";
 import formatMoney from "./formatMoney";
 
 
-export default function useTaco({ tacos, values: { name, email } }) {
+export default function useTaco({ tacos, values: { name, email, chiliSyrup } }) {
     const [order, setOrder] = useContext(OrderContext);
     const [error, setError] = useState()
     const [loading, setLoading] = useState(false);
@@ -31,7 +31,8 @@ export default function useTaco({ tacos, values: { name, email } }) {
             order: attachNamesAndPrices(order, tacos),
             total: formatMoney(calculateOrderTotal(order, tacos)),
             name,
-            email
+            email,
+            chiliSyrup
         }
 
         const res = await fetch(`${process.env.GATSBY_SERVERLESS_BASE}/placeOrder`, {

@@ -1,24 +1,24 @@
 # <h1 align="center"> 🚨🤫 I am Currently Under Construction! 🤫🚨</h1>
 
-<div align="center" width="20%">
-    <img src="./images/NatesTacoShack.png">
+<div align="center">
+    <img src="./images/NatesTacoShack.png" width="20%">
 </div>
 
 <div align="center">
     <a href="#contact">
-        <img src="./images/README_nav/About.png" width="12%">
+        <img src="./images/README_nav/About.png" width="15%">
     </a>
     <a href="#contact">
-        <img src="./images/README_nav/TheClient.png" width="12%">
+        <img src="./images/README_nav/TheClient.png" width="15%">
     </a>
     <a href="#contact">
-        <img src="./images/README_nav/HeadlessCMS.png" width="12%">
+        <img src="./images/README_nav/HeadlessCMS.png" width="15%">
     </a>
     <a href="#contact">
-        <img src="./images/README_nav/DeployedApp.png" width="12%">
+        <img src="./images/README_nav/DeployedApp.png" width="15%">
     </a>
     <a href="#contact">
-        <img src="./images/README_nav/ContactMe.png" width="12%">
+        <img src="./images/README_nav/ContactMe.png" width="15%">
     </a>
 <div>
 

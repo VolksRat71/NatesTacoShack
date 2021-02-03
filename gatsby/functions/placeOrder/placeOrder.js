@@ -1,29 +1,43 @@
 const nodemailer = require('nodemailer');
 
-
 function generateOrderEmail({ order, total }) {
-    return `<div>
-                <h2>Your recent order for ${total}</h2>
+    //TODO: Add logo render
+    return `<div style="
+    border: 1px solid black;
+    padding: 20px;
+    font-family: sans-serif;
+    line-height: 2;
+    font-size: 20px;
+    text-align: center;
+    ">
+                <h2>Thank you for ordering!</h2>
                 <p>Your order will be ready in 20 minutes!</p>
-                <ul>
+                <ul style="list-style: none">
                     ${order.map(({ src, name, quantity, price }) => {
-        `<li>
+        return `<li>
+                    <h5>${quantity}ct. ${name} - ${price}</h5>
                         <img src="${src}" alt="${name}" />
-                        ${quantity} ${name} - ${price}
                     </li>`
-    })}
+    }).join('')}
                 </ul>
-                <p>Your total is $${total} due at pickup!</p>
+                <p>Your total is <strong>${total}</strong> due at pickup!</p>
+                <p>Hello! This <a href="https://nathanryan.tech/">web developer</a> is looking for a good job 😊</p>
             </div>
     `
+};
+
+async function wait(ms = 0) {
+    return new Promise((resolve, reject) => {
+        setTimeout(resolve, ms)
+    })
 }
 
 const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
     auth: {
-        user: 'francisco.roob73@ethereal.email',
-        pass: 'jsP3pwGMzZeTw2uj1W'
+        user: 'josephine38@ethereal.email',
+        pass: 'QmHXF3jjdnymXqrE8c'
     }
 });
 
@@ -49,6 +63,6 @@ exports.handler = async (event, context) => {
     })
     return {
         statusCode: 200,
-        body: JSON.stringify(info)
+        body: JSON.stringify({ message: 'Success!' })
     }
 }

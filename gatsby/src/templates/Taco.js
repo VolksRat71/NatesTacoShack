@@ -6,7 +6,7 @@ import SEO from '../components/SEO';
 
 const TacoGrid = styled.div`
     display: grid;
-    grid-gap: 2rem;
+    gap: 2rem;
     grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
     .largeFont {
         font-size: 1.35em;

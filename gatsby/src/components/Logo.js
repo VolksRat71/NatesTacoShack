@@ -36,7 +36,7 @@ const LogoStyles = styled.div`
     align-items: center;
     margin: 0;
     grid-row: 2 / span 2;
-    grid-gap: 2em;
+    gap: 2em;
     transform: translateY(-0.7em);
   }
   .taco-shack {

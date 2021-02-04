@@ -28,7 +28,7 @@ const IngredientStyles = styled.div`
     a {
         display: grid;
         grid-template-columns: auto 1fr;
-        grid-gap: 0 0.5rem;
+        gap: 0 0.5rem;
         padding: 5px;
         background: var(--grey);
         border-radius: 0.5em;

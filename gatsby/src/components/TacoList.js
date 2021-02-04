@@ -7,7 +7,7 @@ import shuffle from '../utils/shuffle';
 const TacoGridStyles = styled.div`
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    grid-gap: 4rem;
+    gap: 4rem;
     grid-auto-rows: auto auto 500px;
 `;
 
@@ -18,7 +18,7 @@ const TacoStyles = styled.div`
     }
     grid-template-rows: var(--rows, subgrid);
     grid-row: span 3;
-    grid-gap: 1rem;
+    gap: 1rem;
     h2,
     p {
         margin: 0;

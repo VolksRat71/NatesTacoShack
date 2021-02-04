@@ -5,7 +5,7 @@ import SEO from '../components/SEO';
 
 const BeerGridStyles = styled.div`
     display: grid;
-    grid-gap: 2rem;
+    gap: 2rem;
     grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 `;
 

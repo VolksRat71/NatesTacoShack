@@ -19,7 +19,7 @@ export const SingleGridItem = styled.div`
         height: auto;
     }
     p {
-        transform: rotate(-2deg) translateY(-50%);
+        transform: rotate(-2deg) translateY(-90%);
         position: absolute;
         width: 100%;
         left: 0;

@@ -10,7 +10,6 @@ function generateOrderEmail({ order, total }) {
     font-size: 20px;
     text-align: center;
     ">
-                <img style="width: 20%" src="https://raw.githubusercontent.com/VolksRat71/NatesTacoShack/main/images/NatesTacoShack.png" alt="Nates Taco Shack Logo" />
                 <h2>Thank you for ordering!</h2>
                 <p>Your order will be ready in 20 minutes!</p>
                 <ul style="list-style: none">
@@ -31,8 +30,8 @@ const transporter = nodemailer.createTransport({
     host: 'smtp.ethereal.email',
     port: 587,
     auth: {
-        user: 'josephine38@ethereal.email',
-        pass: 'QmHXF3jjdnymXqrE8c'
+        user: 'rodger86@ethereal.email',
+        pass: 'eyxtZWqGvmAU5tJhR4'
     }
 });
 
@@ -65,7 +64,7 @@ exports.handler = async (event, context) => {
     }
 
     const info = await transporter.sendMail({
-        from: "Nates Taco Shack <nate@example.com>",
+        from: "Nates Taco Shack <nathanieljryan1994@gmail.com>",
         to: `${body.name} <${body.email}>`,
         subject: "🌮 Nates Taco Shack Order",
         html: generateOrderEmail({ order: body.order, total: body.total })

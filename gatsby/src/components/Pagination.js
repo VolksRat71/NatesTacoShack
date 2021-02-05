@@ -35,15 +35,23 @@ function Pagination({
     const nextPage = currentPage + 1;
     const hasPrevPage = nextPage >= 1;
     const hasNextPage = nextPage <= pageCount;
+    console.log(`hasPrevPage ${!hasPrevPage}`);
+    console.log(`hasNextPage ${!hasNextPage}`);
     return (
         <PaginationStyles>
-            <Link disabled={!hasPrevPage} to={`${base}/${prevPage}`}>
+            <Link
+                title="Prev Page"
+                disabled={!hasPrevPage}
+                to={`${base}/${prevPage}`}>
                 ← Prev
             </Link>
             {Array.from({ length: pageCount }).map((_, i) => (
                 <Link key={i} to={`${base}/${i + 1}`}>{i + 1}</Link>
             ))}
-            <Link disabled={!hasNextPage} to={`${base}/${nextPage}`}>
+            <Link
+                title="Next Page"
+                disabled={!hasNextPage}
+                to={`${base}/${nextPage}`}>
                 Next →
             </Link>
         </PaginationStyles>

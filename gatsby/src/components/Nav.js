@@ -48,6 +48,27 @@ const NavStyles = styled.nav`
             font-size: 2rem;
         }
     }
+    @media (max-width: 600px) {
+        --columns: 4;
+        margin-bottom: 2rem;
+        border-bottom: 2px solid var(--grey);
+        padding-bottom: 2rem;
+        ul {
+        grid-template-rows: auto auto;
+        grid-template-columns: repeat(var(--columns), 1fr);
+        justify-items: center;
+        }
+        .logo-item {
+        order: 0;
+        grid-column: 1 / -1;
+        }
+        .logo {
+        transform: none;
+        }
+    }
+    @media (max-width: 500px) {
+        --columns: 2;
+    }
 `;
 
 export default function Nav() {
@@ -60,8 +81,10 @@ export default function Nav() {
                 <li>
                     <Link to="/tacos">Taco Menu</Link>
                 </li>
-                <li>
-                    <Link to="/"><Logo /></Link>
+                <li className="logo-item">
+                    <Link to="/">
+                        <Logo />
+                    </Link>
                 </li>
                 <li>
                     <Link to="/chefs/1">Meet the Chefs</Link>

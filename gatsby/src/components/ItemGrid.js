@@ -13,10 +13,10 @@ export default function ItemGrid({ items, itemType }) {
                 slug: { current },
                 image: { asset: { url, metadata: { lqip } } }
             }) => (
-                <Link map={_id} to={`${pathTo}${current}`}>
+                <Link key={_id} to={`${pathTo}${current}`}>
                     <SingleGridItem>
                         <p>
-                            <span className="mark word">
+                            <span className="mark itemsDesc">
                                 {name}{vegan ? '🌱' : ''}
                             </span>
                         </p>

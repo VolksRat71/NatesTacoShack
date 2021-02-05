@@ -27,11 +27,15 @@ function generateOrderEmail({ order, total }) {
 };
 
 const transporter = nodemailer.createTransport({
-    host: 'smtp.ethereal.email',
-    port: 587,
+    host: process.env.MAIL_HOST,
+    secureConnection: process.env.MAIL_SECURE,
+    port: process.env.MAIL_PORT,
+    tls: {
+        ciphers: process.env.MAIL_CIPHER
+    },
     auth: {
-        user: 'rodger86@ethereal.email',
-        pass: 'eyxtZWqGvmAU5tJhR4'
+        user: process.env.MAIL_USER,
+        pass: process.env.MAIL_PASS
     }
 });
 
@@ -64,11 +68,12 @@ exports.handler = async (event, context) => {
     }
 
     const info = await transporter.sendMail({
-        from: "Nates Taco Shack <nathanieljryan1994@gmail.com>",
+        from: `Nates Taco Shack <${process.env.MAIL_USER}>`,
         to: `${body.name} <${body.email}>`,
         subject: "🌮 Nates Taco Shack Order",
         html: generateOrderEmail({ order: body.order, total: body.total })
     })
+
     return {
         statusCode: 200,
         body: JSON.stringify({ message: 'Success!' })

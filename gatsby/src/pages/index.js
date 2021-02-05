@@ -4,21 +4,6 @@ import { HomePageGrid } from '../styles/HomePageStyles'
 import LoadingGrid from '../components/LoadingGrid';
 import ItemGrid from '../components/ItemGrid';
 
-function WhoIsOn({ whoIsOn }) {
-    return (
-        <div>
-            <h2 className="center">
-                <span className="mark">
-                    Chefs for Today
-                </span>
-            </h2>
-            <p>Good eats by these good people</p>
-            {!whoIsOn && <LoadingGrid count={4} />}
-            {whoIsOn?.length && <ItemGrid items={whoIsOn} />}
-        </div>
-    )
-};
-
 function DailySpecials({ dailySpecials }) {
     return (
         <div>
@@ -28,8 +13,25 @@ function DailySpecials({ dailySpecials }) {
                 </span>
             </h2>
             <p>Today's featured Tacos</p>
-            {!dailySpecials && <LoadingGrid count={4} />}
-            {dailySpecials?.length && <ItemGrid items={dailySpecials} itemType="special" />}
+            {dailySpecials.length === 0 ?
+                <LoadingGrid count={4} /> :
+                <ItemGrid items={dailySpecials} itemType="special" />}
+        </div>
+    )
+};
+
+function WhoIsOn({ whoIsOn }) {
+    return (
+        <div>
+            <h2 className="center">
+                <span className="mark">
+                    Chefs for Today
+                </span>
+            </h2>
+            <p>Good eats by good people</p>
+            {whoIsOn.length === 0 ?
+                <LoadingGrid count={4} /> :
+                <ItemGrid items={whoIsOn} />}
         </div>
     )
 };
@@ -41,8 +43,8 @@ export default function HomePage() {
             <h1>The Best Tacos in Austin, TX!</h1>
             <p>The {location} location is open 11am to 11pm every day</p>
             <HomePageGrid>
-                <WhoIsOn whoIsOn={whoIsOn} />
                 <DailySpecials dailySpecials={dailySpecials} />
+                <WhoIsOn whoIsOn={whoIsOn} />
             </HomePageGrid>
         </div>
     )

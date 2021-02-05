@@ -2,10 +2,11 @@ import React from 'react';
 import { ItemsGrid, SingleGridItem } from "../styles/HomePageStyles";
 
 export default function ({ count }) {
+    console.log("Hello");
     return (
         <ItemsGrid>
             {Array.from({ length: count }, (_, i) => (
-                <SingleGridItem>
+                <SingleGridItem key={i}>
                     <p>
                         <span className="mark">Loading...</span>
                     </p>

@@ -4,6 +4,9 @@ export const HomePageGrid = styled.div`
     display: grid;
     gap: 2rem;
     grid-template-columns: repeat(2, minmax(auto, 1fr));
+    @media (max-width: 600px) {
+        grid-template-columns: repeat(1, minmax(auto, 1fr));
+    }
 `;
 
 export const ItemsGrid = styled.div`
@@ -46,5 +49,15 @@ export const SingleGridItem = styled.div`
         );
         background-size: 500px;
         animation: shine 1s infinite linear;
+    }
+    @media (max-width: 1010px) {
+        .itemsDesc {
+            font-size: 1.25rem;
+        }
+    }
+    @media (max-width: 600px) {
+        .itemsDesc {
+            font-size: 2rem;
+        }
     }
 `;

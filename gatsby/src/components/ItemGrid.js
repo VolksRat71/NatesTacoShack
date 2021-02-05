@@ -16,7 +16,7 @@ export default function ItemGrid({ items, itemType }) {
                 <Link map={_id} to={`${pathTo}${current}`}>
                     <SingleGridItem>
                         <p>
-                            <span className="mark">
+                            <span className="mark word">
                                 {name}{vegan ? '🌱' : ''}
                             </span>
                         </p>

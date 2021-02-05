@@ -9,14 +9,11 @@ function WhoIsOn({ whoIsOn }) {
         <div>
             <h2 className="center">
                 <span className="mark">
-                    Chefs in the Kitchen Today
+                    Chefs for Today
                 </span>
             </h2>
             <p>Good eats by these good people</p>
             {!whoIsOn && <LoadingGrid count={4} />}
-            {whoIsOn && !whoIsOn?.length && (
-                <p>No one is working right now</p>
-            )}
             {whoIsOn?.length && <ItemGrid items={whoIsOn} />}
         </div>
     )
@@ -32,9 +29,6 @@ function DailySpecials({ dailySpecials }) {
             </h2>
             <p>Today's featured Tacos</p>
             {!dailySpecials && <LoadingGrid count={4} />}
-            {dailySpecials && !dailySpecials?.length && (
-                <p>There are no daily specials right now</p>
-            )}
             {dailySpecials?.length && <ItemGrid items={dailySpecials} itemType="special" />}
         </div>
     )

@@ -4,7 +4,6 @@ import attachNamesAndPrices from "./attachNamesAndPrices";
 import calculateOrderTotal from "./calculateOrderTotal";
 import formatMoney from "./formatMoney";
 
-
 export default function useTaco({ tacos, values: { name, email, chiliSyrup } }) {
     const [order, setOrder] = useContext(OrderContext);
     const [error, setError] = useState()
@@ -54,8 +53,6 @@ export default function useTaco({ tacos, values: { name, email, chiliSyrup } }) 
         }
 
     }
-
-    localStorage.setItem('order', JSON.stringify(order))
 
     return {
         addToOrder,

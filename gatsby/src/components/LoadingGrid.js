@@ -2,7 +2,6 @@ import React from 'react';
 import { ItemsGrid, SingleGridItem } from "../styles/HomePageStyles";
 
 export default function ({ count }) {
-    console.log("Hello");
     return (
         <ItemsGrid>
             {Array.from({ length: count }, (_, i) => (

@@ -1,9 +1,8 @@
 import React, { useState, createContext } from 'react';
-
 const OrderContext = createContext();
 
 export function OrderProvider({ children }) {
-    const [order, setOrder] = useState(JSON.parse(localStorage.getItem('order')) || []);
+    const [order, setOrder] = useState([]);
     return (
         <OrderContext.Provider value={[order, setOrder]}>
             {children}

@@ -1,5 +1,5 @@
 <div align="center">
-    <a href="https://notsupreme-next-prod.herokuapp.com/">
+    <a href="https://eager-aryabhata-2f82dc.netlify.app/">
         <img src="./images/README_nav/Logo_Transparent.png" height="250px">
     </a>
 </div>
@@ -26,7 +26,7 @@
 <br>
 
 <p align="center">
-    <a href="https://notsupreme-next-prod.herokuapp.com/">
+    <a href="https://eager-aryabhata-2f82dc.netlify.app/">
         <img width="45%" src="./images/Mockups/Laptop-Mockup.gif">
         <img width="45%" src="./images/Mockups/Phone-Mockup.gif">
     </a>
@@ -37,7 +37,7 @@
 ---
 
 <p align="center" id="about">
-    <img height="50px" src="./images/README_nav/About.png"/>
+    <img height="80px" src="./images/README_nav/About.png"/>
     <a href="#top">top ⤴</a>
 </p>
 
@@ -62,7 +62,9 @@ There is some really good stuff here, check it out, read the README, click the l
 ---
 
 <p align="center">
-    <img id="graphiql" width="60%"  src="./images/README_gifs/ClientGQLw.Regex.gif"/>
+    <a href="https://eager-aryabhata-2f82dc.netlify.app/">
+        <img id="graphiql" width="60%"  src="./images/README_gifs/ClientGQLw.Regex.gif"/>
+    </a>
 </p>
 
 ## <p align="center">Client GraphiQL</p>
@@ -72,7 +74,9 @@ Gatsby will cache the data from our Sanity Headless CMS. Here we are Querying Ta
 ---
 
 <p align="center">
+    <a href="https://eager-aryabhata-2f82dc.netlify.app/order">
     <img id="customhooks" width="60%"  src="./images/README_gifs/OrderWCustomHooksNodemailer.gif"/>
+    </a>
 </p>
 
 ## <p align="center">Order with Custom Hooks</p>
@@ -82,7 +86,9 @@ There is quite a lot going in in this page. Custom hooks is the name of the game
 ---
 
 <p align="center">
+    <a href="https://eager-aryabhata-2f82dc.netlify.app/chefs/1">
     <img id="pagination" width="60%"  src="./images/README_gifs/PaginationwGQL.gif"/>
+    </a>
 </p>
 
 ## <p align="center">Pagination</p>
@@ -92,7 +98,9 @@ What do we do to prevent from too much data from spilling on our pages? Dynamic 
 ---
 
 <p align="center">
+    <a href="https://eager-aryabhata-2f82dc.netlify.app/beers/">
     <img id="api" width="60%"  src="./images/README_gifs/API_call.gif"/>
+    </a>
 </p>
 
 ## <p align="center">API Call</p>
@@ -102,7 +110,9 @@ Gatsby dynamic components come back again for this one! We are calling for some 
 ---
 
 <p align="center">
-    <img id="mobile" width="60%"  src="./images/README_gifs/Mobile_Resposiveness.gif"/>
+    <a href="https://eager-aryabhata-2f82dc.netlify.app/">
+        <img id="mobile" width="60%"  src="./images/README_gifs/Mobile_Resposiveness.gif"/>
+    </a>
 </p>
 
 ## <p align="center">Mobile Responsiveness</p>
@@ -112,9 +122,61 @@ CSS Grid, Flexbox, and Media Queries all working in unison to build a beautiful 
 ---
 
 <p align="center">
-    <img id="custom" width="60%"  src="./images/README_gifs/LandingLoadingStates.gif"/>
+    <a href="https://eager-aryabhata-2f82dc.netlify.app/">
+        <img id="custom" width="60%"  src="./images/README_gifs/LandingLoadingStates.gif"/>
+    </a>
 </p>
 
 ## <p align="center">Custom Loading States</p>
 
 It **is** possible to directly make a GraphQL Query from out Serverless Gatsby app to the Sanity Headless CMS. But it takes longer than it would to just query our cached client data. Our Grids ridged frame makes it possible to chack for a loading state and use place holder items complete with dynamic item rendering according depending on the number queried, and some clever CSS animations.
+
+---
+
+---
+
+<p align="center" id="client">
+    <img height="80px" src="./images/README_nav/The_Client.png"/>
+    <a href="#top">top ⤴</a>
+</p>
+
+<img width="70%" src="./images/README_nav/Gatsby.png"/>
+
+What is so special about Gatsby anyway?! Well... Automatic routing based on your directory structure. No need to include additional code for configuring the router. HTML code is generated server-side. Pre-configured Webpack-based build system. Easily extensible by plugin ecosystem.Optimized for speed. Gatsby loads only critical parts so that your site loads as fast as possible. Once loaded, Gatsby prefetches resources for other pages so that clicking around the site feels incredible fast. Easy data integration from sources like CMSs, SaaS services, APIs, databases, file system... just to name a few.
+
+---
+
+---
+
+<p align="center" id="client">
+    <img height="80px" src="./images/README_nav/Headless_CMS.png"/>
+    <a href="#top">top ⤴</a>
+</p>
+
+<img width="70%" src="./images/README_nav/SAnity.png"/>
+
+Ok, then why Sanity Headless CMS? Since a Headless CMS is API driven, it is more flexible. It allows you to build your own head or a presentation layer/ frontend. For marketers to provide a customer-pleasing experience, each channel used by the business would require access to the current product information and availability. Headless CMS is Future-Proof A headless CMS enables businesses to future-proof their applications by separating the presentation layer from the data and logic layer. It is a lot cheaper for your business team to create a new functionality because headless CMS requires little technical involvement. Offers Better Software Architecture A headless CMS is architected to decouple CMS platforms and published content. Allows you to do more with less Organizations will no longer need large teams of specialists with particular CMS knowledge, unlike the requirements for a traditional CMS. Lets You Focus on Your Business Worrying about your CMS can be time-consuming and distracting.
+
+---
+
+---
+
+<p align="center" id="contact">
+    <img height="80px" src="./images/README_nav/Contact_Me.png"/>
+</p>
+
+## <p align="center"> Hello, I am Nate. </p>
+
+<p align="center">
+    <a href="https://nathanryan.tech/">
+        <img width="20%" src="https://avatars1.githubusercontent.com/u/47840525?s=460&u=c5536c61b6b26eb0c4cf5b10a985de3df410c281&v=4"/>
+    </a>
+</p>
+
+<p align="center">
+I live in Austin,TX and I am looking for a good job.
+</p>
+
+<p align="center">
+| <a href="tel:5035047581">(503)504-7581</a> || <a href="mailto:nathanieljryan1994@gmail.com">nathanieljryan1994@gmail.com</a> || <a href="https://www.linkedin.com/in/nathanieljryan/">LinkedIn</a> || <a href="https://nathanryan.tech/">Portfolio</a> || <a href="https://nathanryan.tech/document/NathanielRyanResume.pdf">Resume</a> |
+</p>

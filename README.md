@@ -5,16 +5,16 @@
 </div>
 
 <div align="center" id="#top">
-    <a href="#contact">
+    <a href="#about">
         <img src="./images/README_nav/About.png" height="60px">
     </a>
-    <a href="#contact">
+    <a href="#client">
         <img src="./images/README_nav/The_Client.png" height="60px">
     </a>
-    <a href="#contact">
+    <a href="#headless">
         <img src="./images/README_nav/Headless_CMS.png" height="60px">
     </a>
-    <a href="#contact">
+    <a href="https://eager-aryabhata-2f82dc.netlify.app/">
         <img src="./images/README_nav/Deployed_App.png" height="60px">
     </a>
     <a href="#contact">
@@ -62,7 +62,7 @@ There is some really good stuff here, check it out, read the README, click the l
 ---
 
 <p align="center">
-    <a href="https://eager-aryabhata-2f82dc.netlify.app/">
+    <a href="https://eager-aryabhata-2f82dc.netlify.app/tacos">
         <img id="graphiql" width="60%"  src="./images/README_gifs/ClientGQLw.Regex.gif"/>
     </a>
 </p>
@@ -148,12 +148,12 @@ What is so special about Gatsby anyway?! Well... Automatic routing based on your
 
 ---
 
-<p align="center" id="client">
+<p align="center" id="headless">
     <img height="80px" src="./images/README_nav/Headless_CMS.png"/>
     <a href="#top">top ⤴</a>
 </p>
 
-<img width="70%" src="./images/README_nav/SAnity.png"/>
+<img width="70%" src="./images/README_nav/Sanity.png"/>
 
 Ok, then why Sanity Headless CMS? Since a Headless CMS is API driven, it is more flexible. It allows you to build your own head or a presentation layer/ frontend. For marketers to provide a customer-pleasing experience, each channel used by the business would require access to the current product information and availability. Headless CMS is Future-Proof A headless CMS enables businesses to future-proof their applications by separating the presentation layer from the data and logic layer. It is a lot cheaper for your business team to create a new functionality because headless CMS requires little technical involvement. Offers Better Software Architecture A headless CMS is architected to decouple CMS platforms and published content. Allows you to do more with less Organizations will no longer need large teams of specialists with particular CMS knowledge, unlike the requirements for a traditional CMS. Lets You Focus on Your Business Worrying about your CMS can be time-consuming and distracting.
 

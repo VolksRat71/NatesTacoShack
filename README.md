@@ -43,9 +43,9 @@
 
 In an effort to understand what Serverless Applications are I completed a course on what it is, how it works, and where its going in the future. Here is the product after completing about 120hrs+ of study.
 
-Here we have "Nate's Taco Shack", a fictional restaurant based out of Austin, TX. We give users the ability to view the current menu, chefs employed at our location, order for curbside or delivery, recieve emailed order details, and a hidden feature for a beer menu!
+Here we have "Nate's Taco Shack", a fictional restaurant based out of Austin, TX. We give users the ability to view the current menu, chefs employed at our location, order for curbside or delivery, receive emailed order details, and a hidden feature for a beer menu!
 
-This application goes over a **ton** of modern web development practices and features. Such as, ES6 JavaScript, Gatsby, React.js, GraphQL, Headless CMS, Progressive Images, Scoped CSS, Serverless Functions.
+This application goes over a **ton** of modern web development practices and features. Such as, ES6 JavaScript, Gatsby, React.js, GraphQL, Headless CMS, Progressive Images, Scoped CSS, Serverless Functions. Just to name a few.
 
 There is some really good stuff here, check it out, read the README, click the links, whatever makes your heart content. 😊
 
@@ -129,7 +129,7 @@ CSS Grid, Flexbox, and Media Queries all working in unison to build a beautiful 
 
 ## <p align="center">Custom Loading States</p>
 
-It **is** possible to directly make a GraphQL Query from out Serverless Gatsby app to the Sanity Headless CMS. But it takes longer than it would to just query our cached client data. Our Grids ridged frame makes it possible to chack for a loading state and use place holder items complete with dynamic item rendering according depending on the number queried, and some clever CSS animations.
+It **is** possible to directly make a GraphQL Query from out Serverless Gatsby app to the Sanity Headless CMS. But it takes longer than it would to just query our cached client data. Our Grids ridged frame makes it possible to check for a loading state and use place holder items complete with dynamic item rendering according depending on the number queried, and some clever CSS animations.
 
 ---
 
@@ -142,7 +142,7 @@ It **is** possible to directly make a GraphQL Query from out Serverless Gatsby a
 
 <img width="70%" src="./images/README_nav/Gatsby.png"/>
 
-What is so special about Gatsby anyway?! Well... Automatic routing based on your directory structure. No need to include additional code for configuring the router. HTML code is generated server-side. Pre-configured Webpack-based build system. Easily extensible by plugin ecosystem.Optimized for speed. Gatsby loads only critical parts so that your site loads as fast as possible. Once loaded, Gatsby prefetches resources for other pages so that clicking around the site feels incredible fast. Easy data integration from sources like CMSs, SaaS services, APIs, databases, file system... just to name a few.
+What is so special about Gatsby anyway?! Automatic routing based on your directory structure. No need to include additional code for configuring the router. HTML code is generated server-side. Pre-configured Webpack-based build system. Easily extensible by plugin ecosystem.Optimized for speed. Gatsby loads only critical parts so that your site loads as fast as possible. Once loaded, Gatsby prefetches resources for other pages so that clicking around the site feels incredible fast. Easy data integration from sources like CMSs, SaaS services, APIs, databases, file system... just to name a few.
 
 ---
 

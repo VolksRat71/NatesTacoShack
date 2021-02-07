@@ -140,7 +140,13 @@ It **is** possible to directly make a GraphQL Query from out Serverless Gatsby a
     <a href="#top">top ⤴</a>
 </p>
 
+<br>
+
 <img width="70%" src="./images/README_nav/Gatsby.png"/>
+
+<br>
+<br>
+<br>
 
 What is so special about Gatsby anyway?! Automatic routing based on your directory structure. No need to include additional code for configuring the router. HTML code is generated server-side. Pre-configured Webpack-based build system. Easily extensible by plugin ecosystem.Optimized for speed. Gatsby loads only critical parts so that your site loads as fast as possible. Once loaded, Gatsby prefetches resources for other pages so that clicking around the site feels incredible fast. Easy data integration from sources like CMSs, SaaS services, APIs, databases, file system... just to name a few.
 
@@ -153,7 +159,13 @@ What is so special about Gatsby anyway?! Automatic routing based on your directo
     <a href="#top">top ⤴</a>
 </p>
 
+<br>
+
 <img width="70%" src="./images/README_nav/Sanity.png"/>
+
+<br>
+<br>
+<br>
 
 Ok, then why Sanity Headless CMS? Since a Headless CMS is API driven, it is more flexible. It allows you to build your own head or a presentation layer/ frontend. For marketers to provide a customer-pleasing experience, each channel used by the business would require access to the current product information and availability. Headless CMS is Future-Proof A headless CMS enables businesses to future-proof their applications by separating the presentation layer from the data and logic layer. It is a lot cheaper for your business team to create a new functionality because headless CMS requires little technical involvement. Offers Better Software Architecture A headless CMS is architected to decouple CMS platforms and published content. Allows you to do more with less Organizations will no longer need large teams of specialists with particular CMS knowledge, unlike the requirements for a traditional CMS. Lets You Focus on Your Business Worrying about your CMS can be time-consuming and distracting.
 

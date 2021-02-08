@@ -31,7 +31,10 @@
         {
           "name": "C:\\Users\\natha\\Desktop\\Current Projects\\NatesTacoShack\\gatsby\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
           "options": {
-            "plugins": []
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
           }
         }
       ],
@@ -71,7 +74,10 @@
         {
           "name": "C:\\Users\\natha\\Desktop\\Current Projects\\NatesTacoShack\\gatsby\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
           "options": {
-            "plugins": []
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
           }
         }
       ],
@@ -111,7 +117,10 @@
         {
           "name": "C:\\Users\\natha\\Desktop\\Current Projects\\NatesTacoShack\\gatsby\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
           "options": {
-            "plugins": []
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
           }
         }
       ],
@@ -151,7 +160,10 @@
         {
           "name": "C:\\Users\\natha\\Desktop\\Current Projects\\NatesTacoShack\\gatsby\\node_modules\\@babel\\preset-typescript\\lib\\index.js",
           "options": {
-            "plugins": []
+            "plugins": [],
+            "allExtensions": false,
+            "isTSX": false,
+            "jsxPragma": "React"
           }
         }
       ],

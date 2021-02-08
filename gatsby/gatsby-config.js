@@ -4,9 +4,9 @@ dotenv.config({ path: '.env' })
 export default {
     siteMetadata: {
         title: 'Nates Taco Shack',
-        siteUrl: 'https://heroku.com',
+        siteUrl: 'https://eager-aryabhata-2f82dc.netlify.app/',
         description: 'The best tacos in Austin, TX',
-        twitter: '@NatesTacoShack'
+        icon: 'src/images/favicon.ico'
     },
     plugins: [
         'gatsby-plugin-react-helmet',
@@ -16,8 +16,18 @@ export default {
             options: {
                 projectId: '8ero7t3w',
                 dataset: 'production',
+
                 watch: true,
                 token: process.env.TOKEN
+            },
+        },
+        {
+            resolve: 'gatsby-plugin-manifest',
+            options: {
+                name: 'Nates Taco Shack',
+                short_name: 'Tacos',
+                start_url: '/',
+                icon: 'src/images/favicon.ico'
             }
         }
     ]

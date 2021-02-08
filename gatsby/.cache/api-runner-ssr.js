@@ -8,6 +8,9 @@ var plugins = [{
       plugin: require('C:/Users/natha/Desktop/Current Projects/NatesTacoShack/gatsby/node_modules/gatsby-source-sanity/gatsby-ssr'),
       options: {"plugins":[],"projectId":"8ero7t3w","dataset":"production","watch":true,"token":"sk8IzLBzAOjmoy6hlV5yTLv7iC6HHElYY4pYQcI4Q6Q49Dg1KJoFBrj4gbyowpKl7mZ9PjrRdErkwXBBfbkf9xSMfZ7JmVdZdZi5xstpDn5G9aXgTMY857dzeZRn2aPmwfSDaYuptD4z1N6B04iC5DtwIAA0O8iLBZb7RZNVEAYwfrlXsNVy"},
     },{
+      plugin: require('C:/Users/natha/Desktop/Current Projects/NatesTacoShack/gatsby/node_modules/gatsby-plugin-manifest/gatsby-ssr'),
+      options: {"plugins":[],"name":"Nates Taco Shack","short_name":"Tacos","start_url":"/","icon":"src/images/favicon.ico","legacy":true,"theme_color_in_head":true,"cache_busting_mode":"query","crossOrigin":"anonymous","include_favicon":true,"cacheDigest":"5f63f377f31ecc833c45f650f546fb6f"},
+    },{
       plugin: require('C:/Users/natha/Desktop/Current Projects/NatesTacoShack/gatsby/gatsby-ssr'),
       options: {"plugins":[]},
     }]
